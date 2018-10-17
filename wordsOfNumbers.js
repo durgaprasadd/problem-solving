@@ -1,7 +1,7 @@
 
 let uptoTwenty="zero,one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,twenty".split(",");
 let uptoHundred="zero,ten,twenty,thirty,forty,fifty,sixty,seventy,eighty,ninety,hundred".split(",");
-const generateWordsOfNumbers=function(range){
+const generateWordsOfNumbers=function(uptoHundred,uptoTwenty){
   let words=[];
   for(let index=0;index<uptoTwenty.length;index++){
     words[index]=uptoTwenty[index];
@@ -24,13 +24,13 @@ const generateWordsOfNumbers=function(range){
 }
 
 const findSum = function(words){
-  let sum = 0;
-  for(let index= 1; index < 1000; index++){
+  let sum=0;
+  for(let index=1;index<1000;index++){
     sum += words[index].length;
   }
   sum += "onethousand".length;
   return sum;
 }
 
-let value = generateWordsOfNumbers(10);
-console.log(findSum(value));
+let words=generateWordsOfNumbers(uptoHundred,uptoTwenty);
+console.log(findSum(words));
